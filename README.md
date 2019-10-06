@@ -43,7 +43,7 @@ Implementation of the DLT algorithm to estimate the camera post [R|t] for each i
 
 * `OpenCV `
 * `CMake`
-* `Eigen3.3
+* `Eigen3.3`
 
 ## Run Instructions
 ```
