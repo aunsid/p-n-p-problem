@@ -307,8 +307,12 @@ int main(){
 
 
 		//display image
+		cv::Mat diff;
+		cv::absdiff(orig, image,diff);
 		cv::imshow("Actual Points", orig);
 		cv::imshow("Estimated Points", image);
+		cv::imshow("Difference", diff);
+
 		cv::waitKey(0);
 	}
 
