@@ -25,13 +25,13 @@ data = np.split(data, int(batches))
 fig = plt.figure(figsize = (50,50))
 ax  = fig.gca(projection = '3d')
 
-angles = [a for a in range(0,360,int(360/batches))]
+# angles = [a for a in range(0,360,int(360/batches))]
 
-counter = 0
+# counter = 0
 for d in data:
 
 
-
+	# convert from world to camera -> camera to world 
 	r_c_w = d[0:3,0:3]
 	t_c_w = d[0:3,3]
 
@@ -43,19 +43,17 @@ for d in data:
 	
 
 
-	# print(pos)
-
+	# 3d coords of the points in the WCS
 	xs = points[:,0]
 	ys = points[:,1]
 	zs = points[:,2]
 
+	# plot points
 	ax.scatter(xs,ys,zs, marker= 'o')
 	plt.axis("equal")
-	print(xs)
-	print(ys)
-	print(zs)
 
-	#plot x
+
+	#plot axes
 	ax.quiver(pos[0],pos[1],pos[2],
 		      rot_mat[0,0],
 		      rot_mat[1,0],
@@ -73,11 +71,13 @@ for d in data:
 		      rot_mat[2,2],length = 5 ,color = 'blue')
 
 
-	ax.view_init(elev=-40., azim=angles[counter])
-	plt.savefig("movie%d.png" % counter)
 
-	plt.pause(0.05)
-	counter+=1
+	# # for rotations and saving
+	# ax.view_init(elev=-40., azim=angles[counter])
+	# plt.savefig("movie%d.png" % counter)
+
+	# plt.pause(0.05)
+	# counter+=1
 
 
 plt.show()
@@ -85,5 +85,3 @@ plt.show()
 
 
 
-
-	# print(np.linalg.det(r_c_w))
