@@ -208,6 +208,17 @@ std::vector<cv::Point> GetCameraPoints(const std::vector<double> & points){
 	return p;
 }
 
+void WriteToText(const Eigen::MatrixXd & data){
+
+	std::ofstream file("test.txt",std::ios_base::app);
+  	if (file.is_open())
+  	{
+    	
+    	file << data << '\n';
+  	}
+
+}
+
 
 int main(){
 	/* 
@@ -268,6 +279,9 @@ int main(){
 		
 		//compute M
 		Eigen::MatrixXd M = ComputeM(Q);
+
+		// write M to file
+		WriteToText(M);
 
 
 
