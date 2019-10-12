@@ -45,6 +45,7 @@ Implementation of the DLT algorithm to estimate the camera post [R|t] for each i
 * `CMake`
 * `Eigen3.3`
 
+
 ## Run Instructions
 ```
 mkdir build
@@ -52,7 +53,12 @@ cd build && cmake ..
 make 
 cd ../bin && ./main
 ```
+To plot the camera trajectory from the extrinsics run
+```
+python3 traj.py
 
+# Dependencies Python3,numpy and matplotlib
+```
 
 ## References
 ```
