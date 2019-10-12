@@ -56,9 +56,8 @@ cd ../bin && ./main
 To plot the camera trajectory from the extrinsics run
 ```
 python3 traj.py
-
-# Dependencies Python3,numpy and matplotlib
 ```
+Dependencies for traj.py:  Python3,numpy and matplotlib
 
 ## References
 ```
